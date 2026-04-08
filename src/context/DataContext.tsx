@@ -12,6 +12,7 @@ import BackgroundRemoval from "@/assets/portfolio/background-removal.png";
 import VisitingCard from "@/assets/portfolio/visiting-card.png";
 import Certificate from "@/assets/portfolio/certificate.png";
 import LogoDesign from "@/assets/portfolio/logo-design.png";
+import HouseShiftingImg from "@/assets/portfolio/house-shifting.png";
 
 export interface Product {
   id: string;
@@ -80,6 +81,7 @@ const defaultServices: Service[] = [
   { id: "4", title: "Train Ticket Booking", description: "Tatkal and general train ticket reservations across India.", iconName: "Train" },
   { id: "5", title: "Bus Ticket Booking", description: "AC, Non-AC, Sleeper, and Seater bus bookings for all routes.", iconName: "Bus" },
   { id: "6", title: "Poster Design", description: "Eye-catching posters for events, businesses, and promotions.", iconName: "Image" },
+  { id: "7", title: "Sri Vinayaka House Shifting & Cleaning", description: "Professional house shifting and deep cleaning services for a stress-free moving experience.", iconName: "Truck" },
 ];
 
 const defaultPortfolio: PortfolioItem[] = [
@@ -92,6 +94,7 @@ const defaultPortfolio: PortfolioItem[] = [
   { id: "7", title: "Premium Business Card", category: "Graphic Design", image: VisitingCard },
   { id: "8", title: "Merit Certificate", category: "Graphic Design", image: Certificate },
   { id: "9", title: "Minimalist Brand Logo", category: "Logo Design", image: LogoDesign },
+  { id: "10", title: "Sri Vinayaka Shifting", category: "House Shifting", image: HouseShiftingImg },
 ];
 
 const defaultShopInfo: ShopInfo = {
@@ -112,6 +115,7 @@ const defaultNavLinks: NavLink[] = [
   { name: "Services", path: "/services" },
   { name: "Products", path: "/products" },
   { name: "Portfolio", path: "/portfolio" },
+  { name: "House Shifting", path: "/house-shifting" },
   { name: "Contact", path: "/contact" },
 ];
 

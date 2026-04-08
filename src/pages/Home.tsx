@@ -82,7 +82,7 @@ export function Home() {
           </div>
           
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {services.slice(0, 4).map((service, index) => {
+            {services.slice(0, 8).map((service, index) => {
               const IconComponent = (Icons as any)[service.iconName] || Icons.Circle;
               return (
                 <ServiceCard
@@ -145,7 +145,7 @@ export function Home() {
             <p className="mt-4 text-lg text-gray-600">A glimpse into our creative design portfolio.</p>
           </div>
           
-          <GalleryGrid items={portfolioItems.slice(0, 3)} />
+          <GalleryGrid items={portfolioItems.slice(0, 6)} />
           
           <div className="mt-12 text-center">
             <Link

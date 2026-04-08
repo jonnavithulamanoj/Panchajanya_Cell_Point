@@ -10,6 +10,7 @@ import { Services } from "./pages/Services";
 import { Products } from "./pages/Products";
 import { Portfolio } from "./pages/Portfolio";
 import { Contact } from "./pages/Contact";
+import { HouseShifting } from "./pages/HouseShifting";
 import { AdminDashboard } from "./pages/admin/AdminDashboard";
 import { DataProvider } from "./context/DataContext";
 
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="services" element={<Services />} />
             <Route path="products" element={<Products />} />
             <Route path="portfolio" element={<Portfolio />} />
+            <Route path="house-shifting" element={<HouseShifting />} />
             <Route path="contact" element={<Contact />} />
             <Route path="admin" element={<AdminDashboard />} />
           </Route>

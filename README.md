@@ -1,48 +1,44 @@
-# Panchajanya Cell Point
+# Panchajanya Cell Point & Sri Vinayaka House Shifting
 
-Panchajanya Cell Point is a modern, responsive, and feature-rich web application designed for a local multi-service shop in India. The platform showcases a wide range of services including mobile repairs, ticket bookings, and graphic design, while also providing an integrated product catalog and portfolio showcase.
+Panchajanya Cell Point is a premium, modern, and feature-rich web application designed for a multi-service business hub in Repalle, Andhra Pradesh. The platform serves as a digital storefront for mobile services, electronic products, graphic design, and now, specialized professional moving and cleaning services through **Sri Vinayaka House Shifting & Cleaning**.
 
 ## 🚀 Key Features
 
-- **Service Showcase**: Detailed listing of mobile repair services, software solutions, and booking services (Train/Bus).
-- **Product Catalog**: A curated display of mobile accessories with pricing and high-quality images.
-- **Portfolio Gallery**: A dedicated section to showcase graphic design work, photo editing, and creative projects.
-- **Interactive Contact**: Integration with WhatsApp for direct communication and a professional contact form.
-- **Admin Dashboard**: A management interface to add, update, or delete products and services dynamically.
-- **Persistence**: Data management using React Context with LocalStorage for persistent user data during development.
-- **Responsive Design**: Mobile-first approach ensuring a premium experience across all devices.
+- **Service Showcase**: Comprehensive listing of mobile repair services, software solutions, and travel booking services (Train/Bus).
+- **Professional Moving Services**: Dedicated section for **Sri Vinayaka House Shifting & Cleaning**, offering stress-free relocation and deep cleaning solutions.
+- **Dynamic Product Catalog**: A curated display of mobile accessories with pricing and real-time availability.
+- **Graphic Design Portfolio**: A professional gallery showcasing high-quality design work, including logos, posters, and photo editing.
+- **Instant Communication**: Integrated WhatsApp support for quick inquiries and a professional contact form for detailed requests.
+- **Full Admin Dashboard**: A secure management interface to perform CRUD operations on products and services.
+- **Persistent Data**: Uses React Context API combined with LocalStorage for seamless data persistence during development.
+- **Ultra-Responsive UI**: A mobile-first, high-performance design built for quality across all screen sizes.
 
 ## 🛠️ Tech Stack & Libraries
 
-### Frontend
-- **React 19**: Core UI library for building the component-based architecture.
-- **Vite 6**: Next-generation frontend tooling for fast development and optimized builds.
-- **Tailwind CSS 4**: A utility-first CSS framework for rapid and consistent styling.
-- **Framer Motion**: A powerful animation library for creating smooth, premium transitions and interactions.
-- **Lucide React**: A collection of beautiful, consistent icons for enhanced visual storytelling.
-- **React Router Dom 7**: Dynamic routing for seamless navigation between pages.
+### Frontend Core
+- **React 19**: Leveraging the latest features of the React library for building a robust component-based architecture.
+- **Vite 6**: Providing an ultra-fast development environment and optimized production builds.
+- **Tailwind CSS 4**: Utilizing the cutting-edge utility-first CSS framework for modern, scalable styling.
+- **Framer Motion**: Powering smooth, premium animations and interactive transitions.
+- **Lucide React**: Providing a consistent and beautiful icon system.
+- **React Router Dom 7**: Managing complex client-side routing and navigation.
 
-### Logic & Data
-- **React Context API**: For centralized state management (Products, Services, Portfolio).
-- **LocalStorage**: To persist data changes across browser sessions.
-- **TypeScript**: Ensuring type safety and better developer experience.
-
-### Backend/Tooling (Optional/Contextual)
-- **Express**: Integrated for potential server-side operations or proxying.
-- **Google Generative AI**: SDK included for potential AI-enhanced features or content generation.
+### Logic & State
+- **React Context API**: Centralized state management for products, services, and portfolio data.
+- **LocalStorage**: Ensuring user changes and admin updates persist across sessions.
+- **TypeScript**: Enforcing strict type safety and improving developer productivity.
 
 ## 📋 Requirements
 
-To run this project locally, you need:
 - **Node.js**: Version 18.x or higher.
 - **npm**: Version 9.x or higher.
-- **Modern Browser**: Supporting ES modules and advanced CSS features.
+- **Modern Browser**: Support for ES Modules and advanced CSS Grid/Flexbox.
 
 ## ⚙️ Installation & Setup
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/jonnavithulamanoj/Panchajanya_Cell_Point.git
    cd Panchajanya_Cell_Point
    ```
 
@@ -51,59 +47,56 @@ To run this project locally, you need:
    npm install
    ```
 
-3. **Environment Variables**:
-   Create a `.env` file based on `.env.example` if you plan to use AI features or external APIs.
+3. **Configure Environment**:
+   Create a `.env` file from the template:
+   ```bash
+   cp .env.example .env
+   ```
 
-4. **Run development server**:
+4. **Launch Development Server**:
    ```bash
    npm run dev
    ```
 
-5. **Build for production**:
+5. **Build for Production**:
    ```bash
    npm run build
    ```
 
-## 🔄 Application Flow
+## 🔄 Application Architecture
 
-### 1. Initialization
-- The application starts at `main.tsx`, which renders the `App` component.
-- `App.tsx` wraps the entire application with the `DataProvider` (Context API) and `BrowserRouter`.
+### 1. Entry & Providers
+The app entry point is `main.tsx`, which renders the `App` component wrapped in `DataProvider` and `BrowserRouter`.
 
-### 2. Data Layer (`DataContext.tsx`)
-- On mounting, the `DataProvider` initializes state for products and services.
-- It first checks `localStorage` for any existing data; if none is found, it loads the `defaultProducts` and `defaultServices`.
-- Any changes made through the Admin Dashboard are automatically synced back to `localStorage`.
+### 2. Centralized Data Management (`DataContext.tsx`)
+- **Initialization**: Loads default data or retrieves the latest state from `localStorage`.
+- **Global Hooks**: The `useData` hook provides components with access to products, services, and shop information.
+- **Synchronization**: Automatically persists any admin-driven CRUD operations to the local storage.
 
-### 3. Navigation & Layout
-- The `Layout` component provides a persistent `Navbar` and `Footer`.
-- React Router manages the transition between different pages (`Home`, `Services`, `Products`, `Portfolio`, `Contact`, `Admin`).
-
-### 4. User Interaction
-- Users can browse services and products on their respective pages.
-- The `Contact` page allows users to send messages via a form or jump directly to WhatsApp.
-- The `Portfolio` section uses a grid layout with category filtering for a professional showcase.
-
-### 5. Admin Flow
-- Navigating to `/admin` opens the management dashboard.
-- Admins can perform CRUD operations on the product and service lists, which immediately updates the global state and local storage.
+### 3. Specialized Service Pages
+- **House Shifting**: A dedicated module (`HouseShifting.tsx`) specifically designed for the moving and cleaning service vertical.
+- **Portfolio**: A filtered grid displaying professional creative work.
+- **Admin**: A dedicated dashboard for managing business offerings in real-time.
 
 ## 📂 Project Structure
 
 ```text
 src/
-├── assets/             # Static assets (images, icons)
-├── components/         # Reusable UI and Layout components
-│   ├── layout/         # Base Layout, Navbar, Footer
-│   └── ui/             # Atomic UI components
-├── context/            # Global state management (DataProvider)
-├── hooks/              # Custom React hooks
-├── lib/                # Utility functions and library configs
-├── pages/              # Main page components
-│   └── admin/          # Admin-specific pages
-├── App.tsx             # Main routing and provider setup
-└── main.tsx            # Entry point
+├── assets/             # Images, icons, and static media
+├── components/         # Component library
+│   ├── layout/         # Persistent UI (Navbar, Footer, Root Layout)
+│   ├── ui/             # Reusable atomic components
+│   └── whatsapp/       # Interactive communication components
+├── context/            # Business logic and global state
+├── hooks/              # Custom React hooks for data access
+├── lib/                # Configs and utility scripts
+├── pages/              # Primary route components
+│   ├── admin/          # Business management tools
+│   └── HouseShifting.tsx # Specialized service module
+├── App.tsx             # Routing and layout orchestration
+└── main.tsx            # Application entry point
 ```
 
 ---
 
+*This project is built and maintained for **Panchajanya Cell Point & Sri Vinayaka House Shifting**.*
